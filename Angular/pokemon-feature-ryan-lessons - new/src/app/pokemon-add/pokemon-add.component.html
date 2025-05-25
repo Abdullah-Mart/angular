@@ -1,0 +1,28 @@
+<form #form="ngForm" (ngSubmit)="submitForm(form)">
+    <label for="name"> Name: </label>
+    <input type="text" name="name" id="pokemonName" required minlength="4" ngModel #name="ngModel">
+    <label for="ability">Ability: </label>
+    <input type="text" name="ability" id="pokemonAbility" required ngModel #ability="ngModel">
+    <button type="submit">Submit new Pokémon</button>
+    <div>Amount of Pokémon: {{ count$ | async }}</div>
+  
+    <div *ngIf="(name.touched && ability.touched) && form.form.invalid" class="error">
+      Something went wrong, try again!
+    </div>
+  
+    <div *ngIf="duplicatePokemon" class="error">
+      This Pokémon is already in the list!
+    </div>
+  
+    <a [routerLink]="['/count-pokemon']">Go to counter</a>
+  </form>
+  
+  <div>
+    <h3>Pokémon List</h3>
+    <ul>
+      <li *ngFor="let pokemon of pokemons">
+        {{ pokemon.name }} - {{ pokemon.ability }}
+      </li>
+    </ul>
+  </div>
+  

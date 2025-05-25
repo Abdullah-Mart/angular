@@ -1,0 +1,41 @@
+a {
+    padding: 10px;
+    background: #e7ad5f;
+    border-radius: 40px;
+    text-decoration: none;
+    margin-right: 20px;
+    margin-top: 20px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+audio {
+    display: block;
+}
+
+* {
+    font-family: sans-serif;
+    color: #432805;
+}
+
+img {
+    height: 128px;
+    width: 128px;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: translate .3s ease-in-out
+}
+
+img:hover {
+    translate: 0 -10px;
+    transition: translate .3s ease-in-out
+}
+
+:host {
+    max-width: 400px;
+    margin: 0 auto;
+    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
